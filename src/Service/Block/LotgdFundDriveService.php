@@ -11,7 +11,7 @@
  * @since 0.1.0
  */
 
-namespace Lotgd\Bundle\FunDrive\Service\Block;
+namespace Lotgd\Bundle\FundDrive\Service\Block;
 
 use Sonata\BlockBundle\Model\Block;
 use Sonata\BlockBundle\Event\BlockEvent;
