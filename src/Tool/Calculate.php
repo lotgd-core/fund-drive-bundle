@@ -61,7 +61,7 @@ class Calculate
                 $current -= $row['fees'];
             }
 
-            $pct = ($current / $goal) * 100;
+            $pct = ($current / $goal);
 
             return [
                 'percent' => $pct,
