@@ -35,12 +35,6 @@ final class LotgdFundDriveBlock extends AbstractBlockService
             'goal'           => $prog['goal'],
             'current'        => $prog['current'],
             'paypal_currency' => $this->paypalCurrency,
-
-            'useText'        => get_module_setting('usetext'),
-            'simbolPosition' => get_module_setting('simbolPosition'),
-            'simbol'         => get_module_setting('simbol'),
-            'useBar'         => get_module_setting('usebar'),
-            'showDollars'    => get_module_setting('showdollars'),
         ], $response)->setTtl(900);
     }
 
