@@ -31,7 +31,6 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.3",
-        "idmarinas/lotgd": "^5.5",
         "idmarinas/lotgd-contracts": "^0.2.0",
         "symfony/cache": "^4.4|^5.0",
         "symfony/dependency-injection": "^4.4|^5.0",
