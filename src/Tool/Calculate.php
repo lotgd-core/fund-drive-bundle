@@ -11,7 +11,7 @@
  * @since 0.1.0
  */
 
-namespace Lotgd\Bundle\FunDrive\Tool;
+namespace Lotgd\Bundle\FundDrive\Tool;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Contracts\Cache\CacheInterface;
