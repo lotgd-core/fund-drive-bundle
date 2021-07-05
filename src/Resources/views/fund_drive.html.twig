@@ -4,11 +4,9 @@
     <div class="ui indicating tiny lotgd progress" data-value="{{ current }}" data-total="{{ goal }}">
         <div class="bar"></div>
         <div class="label">
-            {% if useText %}
-                {{ 'indicator.text'|trans|colorize }}
-                {{ percent|format_percent_number({rounding_mode: 'floor', fraction_digit: 2}) }}%
-                {{ current|format_currency(paypal_currency) ~ '/' ~ goal|format_currency(paypal_currency) }}
-            {% endif %}
+            {{ 'indicator.text'|trans|colorize }}
+            {{ percent|format_percent_number({rounding_mode: 'floor', fraction_digit: 2}) }} -
+            {{ current|format_currency(paypal_currency) ~ '/' ~ goal|format_currency(paypal_currency) }}
         </div>
     </div>
 </div>
