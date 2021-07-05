@@ -20,7 +20,7 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder('lotgd_bundle_fund_drive');
+        $treeBuilder = new TreeBuilder('lotgd_fund_drive');
 
         $treeBuilder->getRootNode()
             ->addDefaultsIfNotSet()
