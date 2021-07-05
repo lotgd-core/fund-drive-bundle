@@ -43,6 +43,7 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
+        "idmarinas/lotgd": "^5.5",
         "matthiasnoback/symfony-config-test": "^4.2",
         "matthiasnoback/symfony-dependency-injection-test": "^4.2",
         "nyholm/symfony-bundle-test": "^1.7",
