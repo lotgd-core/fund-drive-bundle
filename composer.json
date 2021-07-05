@@ -2,7 +2,7 @@
     "name": "lotgd-core/bundle-fund-drive",
     "description": "Show a Fund Drive Goal in your LoTGD server.",
     "version": "0.1.0",
-    "type": "symfony-bundle",
+    "type": "lotgd-bundle",
     "license": "BSD-3-Clause",
     "authors": [
         {
