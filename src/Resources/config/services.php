@@ -36,6 +36,6 @@ return static function (ContainerConfigurator $container)
         ->alias(LotgdFundDriveBlock::class, 'lotgd_bundle.fund_drive.block.paypal')
 
         ->set('lotgd_bundle.fund_drive.service.paypal', LotgdFundDriveService::class)
-            ->tag('kernel.event_listener', ['event' => 'sonata.block.event.lotgd_core.paypal', 'method' => 'onBlock'])
+            ->tag('kernel.event_listener', ['event' => 'sonata.block.event.lotgd_core.paypal', 'method' => 'onBlock', 'priority' => 256])
     ;
 };
