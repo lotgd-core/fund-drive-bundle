@@ -26,17 +26,13 @@ class LotgdFundDriveExtension extends ConfigurableExtension
 
         $loader->load('services.php');
 
-        /** @var \Lotgd\Bundle\FunDrive\Tool\Calculate */
-        $tool = $container->get('lotgd_bundle.fund_drive.calculate_tool');
-
-        $tool->setFundDriveProfit($mergedConfig['profit'])
-            ->setFundDriveExpenses($mergedConfig['expenses'])
-            ->setDeductFees($mergedConfig['deduct_fees'])
+        $tool = $container->getDefinition('lotgd_bundle.fund_drive.calculate_tool');
+        $tool->addMethodCall('setFundDriveProfit', [$mergedConfig['profit']])
+            ->addMethodCall('setFundDriveExpenses', [$mergedConfig['expenses']])
+            ->addMethodCall('setDeductFees', [$mergedConfig['deduct_fees']])
         ;
 
-        /** @var \Lotgd\Bundle\FunDrive\Block\LotgdFunDriveBlock */
-        $block = $container->get('lotgd_bundle.fund_drive.block.paypal');
-
-        $block->setPaypalCurrency($mergedConfig['paypal_currency']);
+        $block = $container->getDefinition('lotgd_bundle.fund_drive.block.paypal');
+        $block->addMethodCall('setPaypalCurrency', [$mergedConfig['paypal_currency']]);
     }
 }
