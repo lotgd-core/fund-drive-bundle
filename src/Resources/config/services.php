@@ -14,6 +14,7 @@
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
 use Lotgd\Bundle\FundDrive\Block\LotgdFundDriveBlock;
+use Lotgd\Bundle\FundDrive\EventSubscriber\DonationSubscriber;
 use Lotgd\Bundle\FundDrive\Service\Block\LotgdFundDriveService;
 use Lotgd\Bundle\FundDrive\Tool\Calculate;
 
@@ -37,5 +38,8 @@ return static function (ContainerConfigurator $container)
 
         ->set('lotgd_bundle.fund_drive.service.paypal', LotgdFundDriveService::class)
             ->tag('kernel.event_listener', ['event' => 'sonata.block.event.lotgd_core.paypal', 'method' => 'onBlock', 'priority' => 256])
+
+        ->set('lotgd_bunhdle.fund_drive.donation_subscriber', DonationSubscriber::class)
+            ->tag('kernel.event_subscriber')
     ;
 };
