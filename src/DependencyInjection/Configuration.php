@@ -35,10 +35,12 @@ class Configuration implements ConfigurationInterface
                 ->end()
                 ->booleanNode('deduct_fees')
                     ->defaultTrue()
+                    ->info('Deduct fees of PayPal from Goal')
                 ->end()
                 ->scalarNode('paypal_currency')
                     ->defaultValue('USD')
                     ->cannotBeEmpty()
+                    ->info('Currency usage for PayPal USD, EUR ...')
                 ->end()
             ->end()
         ;
