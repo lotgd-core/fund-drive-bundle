@@ -1,7 +1,7 @@
 {
     "name": "lotgd-core/bundle-fund-drive",
     "description": "Show a Fund Drive Goal in your LoTGD server.",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "type": "lotgd-bundle",
     "license": "BSD-3-Clause",
     "authors": [
@@ -45,6 +45,7 @@
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
         "idmarinas/lotgd": "^5.5",
         "matthiasnoback/symfony-config-test": "^4.2",
         "matthiasnoback/symfony-dependency-injection-test": "^4.2",
