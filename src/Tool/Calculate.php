@@ -26,21 +26,22 @@ class Calculate
 
     public function __construct(CacheInterface $cache, EntityManagerInterface $doctrine)
     {
-        $this->cache = $cache;
+        $this->cache    = $cache;
         $this->doctrine = $doctrine;
     }
 
     public function progress()
     {
-        return $this->cache->get('lotgd_bundle.fund_drive', function () {
-            $targetMonth = \date('m');
+        return $this->cache->get('lotgd_bundle.fund_drive', function ()
+        {
+            $targetMonth = date('m');
 
-            $start = \date('Y').'-'.$targetMonth.'-01';
-            $end   = \date('Y-m-d', \strtotime('+1 month', \strtotime($start)));
+            $start = date('Y').'-'.$targetMonth.'-01';
+            $end = date('Y-m-d', strtotime('+1 month', strtotime($start)));
 
             /** @var Lotgd\Core\Repository\PaylogRepository */
             $repository = $this->doctrine->getRepository('LotgdCore:Paylog');
-            $query      = $repository->createQueryBuilder('u');
+            $query = $repository->createQueryBuilder('u');
 
             $row = $query->select('sum(u.amount) AS gross', 'sum(u.txfee) AS fees')
                 ->where('u.processdate >= :start AND u. processdate < :end')
