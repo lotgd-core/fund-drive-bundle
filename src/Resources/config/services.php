@@ -40,6 +40,7 @@ return static function (ContainerConfigurator $container)
             ->tag('kernel.event_listener', ['event' => 'sonata.block.event.lotgd_core.paypal', 'method' => 'onBlock', 'priority' => 256])
 
         ->set('lotgd_bunhdle.fund_drive.donation_subscriber', DonationSubscriber::class)
+            ->args([ new ReferenceConfigurator('cache.app') ])
             ->tag('kernel.event_subscriber')
     ;
 };
