@@ -4,7 +4,7 @@ Show a Fund Drive Goal in your LoTGD server. Use `sonata_block_render_event('lot
 
 # Install
 ```bash
-composer require lotgd-core/bundle-fund-drive
+composer require lotgd-core/fund-drive-bundle
 ```
 
 # Default config
