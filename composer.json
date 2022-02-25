@@ -1,7 +1,6 @@
 {
     "name": "lotgd-core/fund-drive-bundle",
     "description": "Show a Fund Drive Goal in your LoTGD server.",
-    "version": "0.1.4",
     "type": "lotgd-bundle",
     "license": "BSD-3-Clause",
     "authors": [
