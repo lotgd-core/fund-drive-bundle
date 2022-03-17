@@ -1,13 +1,14 @@
 {% trans_default_domain translation_domain %}
 
-<div class="center aligned">
-    <div class="ui indicating tiny lotgd progress" data-value="{{ current }}" data-total="{{ goal }}">
-        <div class="bar"></div>
-        <div class="label">
-            {{ 'indicator.text'|trans|colorize }}
-            {{ percent|format_percent_number({rounding_mode: 'floor', fraction_digit: 2}) }} -
+{% set styleWidth = 'style="width:' ~ percent * 100 ~ '%;"' %}
+{% set color = percent > 1 ? 'bg-green-600' : 'bg-blue-600' %}
+
+<div class="border-b border-lotgd-500 pb-2 mb-2 text-center">
+    {{ 'indicator.text'|trans|colorize }} {{ percent|format_percent_number({rounding_mode: 'floor', fraction_digit: 2}) }}
+    <div class="h-5 w-full bg-gray-500 relative rounded overflow-hidden">
+        <div id="bundle-fund-drive-progress" class="absolute h-5 {{ color }}" {{ styleWidth }}></div>
+        <div id="bundle-fund-drive-timer" class="absolute h-5 w-full text-center text-yellow-100 whitespace-nowrap text-sm">
             {{ current|format_currency(paypal_currency) ~ '/' ~ goal|format_currency(paypal_currency) }}
         </div>
     </div>
 </div>
-<p>&nbsp;</p>
