@@ -32,18 +32,17 @@ class Calculate
 
     public function progress()
     {
-        return $this->cache->get('lotgd_bundle.fund_drive', function ($item)
-        {
+        return $this->cache->get('lotgd_bundle.fund_drive', function ($item) {
             $item->expiresAfter(900);
 
             $targetMonth = date('m');
 
             $start = date('Y').'-'.$targetMonth.'-01';
-            $end = date('Y-m-d', strtotime('+1 month', strtotime($start)));
+            $end   = date('Y-m-d', strtotime('+1 month', strtotime($start)));
 
             /** @var Lotgd\Core\Repository\PaylogRepository */
             $repository = $this->doctrine->getRepository('LotgdCore:Paylog');
-            $query = $repository->createQueryBuilder('u');
+            $query      = $repository->createQueryBuilder('u');
 
             $row = $query->select('sum(u.amount) AS gross', 'sum(u.txfee) AS fees')
                 ->where('u.processdate >= :start AND u. processdate < :end')
@@ -59,8 +58,7 @@ class Calculate
 
             $current = $row['gross'];
 
-            if ($this->isDeductFees())
-            {
+            if ($this->isDeductFees()) {
                 $current -= $row['fees'];
             }
 
