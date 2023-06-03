@@ -20,9 +20,9 @@ class Calculate
 {
     private $cache;
     private $doctrine;
-    private $fund_drive_profits;
-    private $fund_drive_expenses;
-    private $deduct_fees;
+    private $fundDriveProfits;
+    private $fundDriveExpenses;
+    private $deductFees;
 
     public function __construct(CacheInterface $cache, EntityManagerInterface $doctrine)
     {
@@ -54,7 +54,7 @@ class Calculate
                 ->getSingleResult()
             ;
 
-            $goal = $this->fund_drive_profits + $this->fund_drive_expenses;
+            $goal = $this->fundDriveProfits + $this->fundDriveExpenses;
 
             $current = $row['gross'];
 
@@ -74,36 +74,36 @@ class Calculate
 
     public function setDeductFees(bool $deduct): self
     {
-        $this->deduct_fees = $deduct;
+        $this->deductFees = $deduct;
 
         return $this;
     }
 
     public function isDeductFees(): bool
     {
-        return $this->deduct_fees;
+        return $this->deductFees;
     }
 
     public function getFundDriveProfit(): int
     {
-        return $this->fund_drive_profits;
+        return $this->fundDriveProfits;
     }
 
     public function setFundDriveProfit(int $profit): self
     {
-        $this->fund_drive_profits = $profit;
+        $this->fundDriveProfits = $profit;
 
         return $this;
     }
 
     public function getFundDriveExpenses(): int
     {
-        return $this->fund_drive_expenses;
+        return $this->fundDriveExpenses;
     }
 
     public function setFundDriveExpenses(int $expenses): self
     {
-        $this->fund_drive_expenses = $expenses;
+        $this->fundDriveExpenses = $expenses;
 
         return $this;
     }
