@@ -32,8 +32,10 @@ class Calculate
 
     public function progress()
     {
-        return $this->cache->get('lotgd_bundle.fund_drive', function ()
+        return $this->cache->get('lotgd_bundle.fund_drive', function ($item)
         {
+            $item->expiresAfter(900);
+
             $targetMonth = date('m');
 
             $start = date('Y').'-'.$targetMonth.'-01';
